@@ -92,7 +92,7 @@ const copilot = ({
           const { scrollView } = this.state;
           await this.state.currentStep.wrapper.measureLayout(
             findNodeHandle(scrollView), (x, y, w, h) => {
-              const yOffsett = y > 0 ? y - (h / 2) : 0;
+              const yOffsett = y > 0 ? y : 0; // try to scroll element to top
               scrollView.scrollTo({ y: yOffsett, animated: false });
             });
         }
